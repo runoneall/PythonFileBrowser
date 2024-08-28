@@ -1,0 +1,12 @@
+[
+    {
+        "path": "./file-test",
+        "name": "file test",
+        "id": 1
+    },
+    {
+        "path": "/usr/bin/local",
+        "name": "bin folder",
+        "id": 2
+    }
+]

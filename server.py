@@ -1,5 +1,5 @@
 import flask
-import Config
+import MakeFileList
 
 app = flask.Flask(__name__)
 
@@ -7,8 +7,18 @@ app = flask.Flask(__name__)
 def IndexPage():
     return flask.render_template('index.html')
 
-@app.route('/file-online/<path:filepath>')
-def FileOnlineManager(filepath):
+@app.route('/file-online/<int:id_>')
+@app.route('/file-online/<int:id_>/<path:path_>')
+def FileOnlineManager(*args, **kwargs):
+    FileList = list()
+    if 'path_' in kwargs:
+        FileList = MakeFileList.GetList(kwargs['id_'], kwargs['path_'])
+    if 'path_' not in kwargs:
+        FileList = MakeFileList.GetRootList(kwargs['id_'])
+    print(FileList)
+
+@app.route('/file-action')
+def FileAction():
     pass
 
 @app.route('/file-api/<path:action>')

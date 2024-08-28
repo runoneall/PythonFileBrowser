@@ -4,7 +4,8 @@
         "token": "123",
         "enable": true,
         "allow": {
-            "/": ["read", "write"]
+            "./file-test": ["read", "write"],
+            "/usr/bin/local": ["read"]
         }
     },
     "visitor": {
