@@ -1,0 +1,18 @@
+{
+    "debug-user": {
+        "password": "0123456789",
+        "token": "123",
+        "enable": true,
+        "allow": {
+            "/": ["read", "write"]
+        }
+    },
+    "visitor": {
+        "password": null,
+        "token": null,
+        "enable": true,
+        "allow": {
+            "/share": ["read"]
+        }
+    }
+}
