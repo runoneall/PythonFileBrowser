@@ -15,9 +15,9 @@ def FileOnlineManager(*args, **kwargs):
         FileList = MakeFileList.GetList(kwargs['id_'], kwargs['path_'])
     if 'path_' not in kwargs:
         FileList = MakeFileList.GetRootList(kwargs['id_'])
-    print(FileList)
+    return flask.render_template('ShowFileList.html', FileList=FileList)
 
-@app.route('/file-action')
+@app.route('/file-action/<path:action>')
 def FileAction():
     pass
 

@@ -14,7 +14,7 @@ def FolderConfig() -> list[dict]:
     FolderList = LoadConfig('folders')
     return FolderList
 
-def PathWithId(id_:int) -> dict:
+def GetPathWithId(id_:int) -> dict:
     for OneFolder in FolderConfig():
         if OneFolder['id'] == id_:
-            return OneFolder
+            return OneFolder['path']
